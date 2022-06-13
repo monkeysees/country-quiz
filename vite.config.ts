@@ -11,4 +11,9 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  publicDir: "assets",
+  base: "/frameworks-land/country-quiz/",
+  build: {
+    outDir: "public",
+  },
 });

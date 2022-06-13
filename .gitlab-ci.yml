@@ -1,0 +1,40 @@
+default:
+  image: cypress/base:16.14.2
+
+# Cache modules in between jobs
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - .npm/
+
+before_script:
+  - npm ci --cache .npm --prefer-offline
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - public
+
+test__unit:
+  stage: test
+  coverage: '/All files\s+|\s+\d+(\.\d+)?\s+|/'
+  script:
+    - npm run test:unit:ci
+
+test__e2e:
+  stage: test
+  script:
+    - npm run preview &
+    - npm run test:e2e:ci
+
+pages:
+  stage: deploy
+  script: echo 'Ready Steady Go'
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

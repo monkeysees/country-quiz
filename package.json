@@ -52,7 +52,7 @@
   },
   "lint-staged": {
     "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": "npm run lint --",
-    "*.json": "prettier --write --ignore-path .gitignore --plugin-search-dir=.",
+    "*.{json,html}": "prettier --write --ignore-path .gitignore --plugin-search-dir=.",
     "*.{css,scss,vue,html}": "npm run stylelint --"
   }
 }

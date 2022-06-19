@@ -43,19 +43,24 @@ export const useQuiz = defineStore("quiz", {
           this.countries = extractCountriesFromRaw(countriesRaw);
         });
     },
-    generateNewQuestion(answerOptionsCount: number = ANSWER_OPTIONS_COUNT) {
+    generateNewQuestion() {
       if (!this.countries.length) {
         this.question = null;
         return;
       }
 
       const questionType = getRandomQuestionType();
-      const countriesForQuestion = this.randomCountries(answerOptionsCount);
+      const countriesForQuestion = this.randomCountries(ANSWER_OPTIONS_COUNT);
 
       this.question = generateQuestion(questionType, countriesForQuestion);
     },
-    startNewTurn() {
+    nextTurn() {
       this.gameStatus = "going";
+      this.generateNewQuestion();
+    },
+    restartQuiz() {
+      this.stats.currentScore = 0;
+      this.nextTurn();
     },
     handleSelectedOption(selectedOptionId: string) {
       if (!this.question) {
@@ -75,6 +80,9 @@ export const useQuiz = defineStore("quiz", {
         this.stats.currentScore += 1;
         this.gameStatus = "success";
       } else {
+        if (this.stats.currentScore > this.stats.maxScore) {
+          this.stats.maxScore = this.stats.currentScore;
+        }
         this.gameStatus = "fail";
       }
     },

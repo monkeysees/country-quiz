@@ -1,0 +1,6 @@
+@mixin respond-short-screen() {
+  // 750px
+  @media only screen and (max-height: 46.875em) {
+    @content;
+  }
+}

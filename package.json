@@ -14,6 +14,10 @@
     "stylelint": "stylelint --fix --ignore-path .gitignore --cache"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.14",
+    "the-new-css-reset": "^1.6.1",
     "vue": "^3.2.36"
   },
   "devDependencies": {

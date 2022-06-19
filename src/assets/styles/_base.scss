@@ -1,0 +1,38 @@
+:root {
+  --font-default: "Jost*", system-ui, -apple-system, "BlinkMacSystemFont",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans",
+    "Helvetica Neue", sans-serif;
+  --color-primary: rgb(47 82 123 / 100%);
+  --color-primary-light: rgb(96 102 208 / 80%);
+  --color-primary-lighter: rgb(96 102 208 / 70%);
+  --color-secondary: rgb(249 168 38 / 100%);
+  --color-secondary-shadow: rgb(252 168 47 / 40%);
+  --color-success: rgb(96 191 136 / 100%);
+  --color-error: rgb(234 130 130 / 100%);
+  --color-dark-shadow: rgb(0 0 0 / 10%);
+  --color-light: rgb(242 242 242 / 100%);
+  @media (prefers-contrast: more) {
+    --color-light: rgb(255 255 255 / 100%);
+  }
+
+  --transition-config: 100ms ease-in-out;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-default);
+  line-height: 1.5;
+  width: 100vw;
+  height: 100vh;
+  background: center / cover no-repeat url("@/assets/images/background.png");
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}

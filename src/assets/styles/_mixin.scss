@@ -1,6 +1,6 @@
 @mixin respond-small-height {
-  // 750px
-  @media only screen and (max-height: 46.875em) {
+  // 700px
+  @media only screen and (max-height: 43.75em) {
     @content;
   }
 }

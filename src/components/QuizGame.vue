@@ -51,16 +51,13 @@ onMounted(async () => {
   right: 0;
 }
 
-.question {
-  margin-bottom: 2.4rem;
-}
-
 .button {
   cursor: pointer;
   align-self: flex-end;
   width: 11.6rem;
   height: 5.6rem;
   padding: 1.6rem 3.6rem;
+  margin-top: 2.4rem;
   font-weight: 700;
   font-size: 1.8rem;
   color: var(--color-light);
@@ -71,10 +68,14 @@ onMounted(async () => {
   place-content: center;
   transform-origin: right;
   transition: visibility var(--transition-config),
-    transform var(--transition-config);
+    transform var(--transition-config), height var(--transition-config),
+    padding var(--transition-config), margin var(--transition-config);
 
   &:not(.visible) {
     visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0 0 3.6rem;
   }
 
   &:focus-visible {

@@ -9,7 +9,7 @@ onMounted(() => quizStore.fetchCountries());
 </script>
 
 <template>
-  <main>
+  <main class="app-main">
     <h1 class="app-heading">Country Quiz</h1>
     <QuizGame v-if="quizStore.countries.length" />
   </main>
@@ -17,6 +17,10 @@ onMounted(() => quizStore.fetchCountries());
 
 <style lang="scss">
 @import "@/assets/styles/main";
+
+.app-main {
+  padding: 3.2rem;
+}
 
 .app-heading {
   font-weight: 700;

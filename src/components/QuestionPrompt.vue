@@ -49,7 +49,7 @@ function handleButtonClick() {
   display: grid;
   width: 40rem;
 
-  @include mixin.respond-short-screen {
+  @include mixin.respond-small-height {
     width: 48rem;
   }
 }

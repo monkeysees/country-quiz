@@ -80,7 +80,7 @@ function handleSelection() {
   grid-template-columns: 1.8rem 1ch 4.5rem 1fr 1.8rem 2rem 1.8rem;
   align-items: center;
 
-  @include mixin.respond-short-screen {
+  @include mixin.respond-small-height {
     grid-template-columns: 1.8rem 1ch 2.5rem 1fr 1.8rem 2rem 1.8rem;
   }
 

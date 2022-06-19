@@ -23,7 +23,7 @@ const quizStore = useQuiz();
   row-gap: 2.8rem;
   counter-reset: list;
 
-  @include mixin.respond-short-screen {
+  @include mixin.respond-small-height {
     grid-template-columns: 1fr 1fr;
     column-gap: 2.8rem;
   }

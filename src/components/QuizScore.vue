@@ -17,6 +17,8 @@ function handleButtonClick() {
   emit("restart-quiz");
   buttonClicked.value = false;
 }
+
+const pluralAnswers = (score: number) => (score === 1 ? "answer" : "answers");
 </script>
 
 <template>
@@ -25,7 +27,11 @@ function handleButtonClick() {
     <p class="results__statistic">
       You got
       <span class="results__score">{{ quizStore.stats.currentScore }}</span>
-      correct {{ quizStore.stats.currentScore === 1 ? "answer" : "answers" }}
+      correct {{ pluralAnswers(quizStore.stats.currentScore) }}!
+    </p>
+    <p class="results__statistic">
+      Your max score is
+      <span class="results__score">{{ quizStore.stats.maxScore }}</span>
     </p>
     <BaseButton
       class="button"
@@ -38,6 +44,8 @@ function handleButtonClick() {
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/styles/mixin";
+
 .results {
   color: var(--color-primary);
   display: grid;
@@ -51,7 +59,9 @@ function handleButtonClick() {
 
   &__statistic {
     font-size: 1.8rem;
-    margin-bottom: 7.2rem;
+    display: flex;
+    align-items: center;
+    column-gap: 1ch;
   }
 
   &__score {
@@ -64,10 +74,15 @@ function handleButtonClick() {
 .button {
   width: 20.9rem;
   height: 6.2rem;
+  margin-top: 4.8rem;
   font-weight: 600;
   font-size: 1.8rem;
   border: 0.2rem solid var(--color-primary);
   transition: transform var(--transition-config);
+
+  @include mixin.respond-tiny-height {
+    margin-top: 4rem;
+  }
 
   &:focus-visible {
     text-decoration: 0.2rem underline;

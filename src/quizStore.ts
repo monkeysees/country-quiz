@@ -58,7 +58,7 @@ export const useQuiz = defineStore("quiz", {
       this.gameStatus = "going";
       this.generateNewQuestion();
     },
-    restartQuiz() {
+    startQuiz() {
       this.stats.currentScore = 0;
       this.nextTurn();
     },

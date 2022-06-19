@@ -12,7 +12,7 @@ const quizStore = useQuiz();
 const showStats = ref(false);
 
 function handleQuizRestart() {
-  quizStore.restartQuiz();
+  quizStore.startQuiz();
   showStats.value = false;
 }
 
@@ -21,7 +21,7 @@ function handleQuizFinish() {
 }
 
 onMounted(async () => {
-  quizStore.nextTurn();
+  quizStore.startQuiz();
 });
 </script>
 
@@ -42,6 +42,8 @@ onMounted(async () => {
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/styles/mixin";
+
 .game {
   padding: 6.8rem 3.2rem 3.2rem;
   border-radius: 2.4rem;
@@ -64,7 +66,11 @@ onMounted(async () => {
     width: 23.8rem;
     height: 12.85rem;
     margin-top: -1.8rem;
-    margin-bottom: 7.2rem;
+    margin-bottom: 6.4rem;
+
+    @include mixin.respond-tiny-height {
+      margin-bottom: 4rem;
+    }
   }
 }
 </style>

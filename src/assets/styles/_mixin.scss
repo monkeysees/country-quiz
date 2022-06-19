@@ -1,6 +1,13 @@
-@mixin respond-short-screen() {
+@mixin respond-small-height {
   // 750px
   @media only screen and (max-height: 46.875em) {
+    @content;
+  }
+}
+
+@mixin respond-tiny-height {
+  // 600px
+  @media only screen and (max-height: 37.5em) {
     @content;
   }
 }

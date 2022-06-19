@@ -20,7 +20,7 @@ const quizStore = useQuiz();
 .image {
   width: 10.5rem;
   height: 6.75rem;
-  box-shadow: 0 0.4rem 2.4rem var(--color-dark-shadow);
+  filter: drop-shadow(0 0.4rem 2.4rem var(--color-dark-shadow));
   border-radius: 0.4rem;
   margin-bottom: 2.8rem;
 }

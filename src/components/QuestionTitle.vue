@@ -30,5 +30,6 @@ const quizStore = useQuiz();
   font-size: 2.4rem;
   color: var(--color-primary);
   margin-bottom: 3.2rem;
+  display: inline-block; // otherwise margin-bottom does not appear in Safari
 }
 </style>

@@ -2,6 +2,10 @@
 import type { Option } from "@/models/quiz";
 import { computed } from "vue";
 import { useQuiz } from "@/quizStore";
+import iconsUrl from "@/assets/images/icons.svg";
+
+const iconSuccessUrl = `${iconsUrl}#check`;
+const iconFailUrl = `${iconsUrl}#cancel`;
 
 const quizStore = useQuiz();
 
@@ -38,6 +42,25 @@ function handleSelection() {
       @click="handleSelection"
       :disabled="quizStore.isEndOfTurn"
     />
+    <svg
+      class="icon"
+      :class="{
+        'icon--shown':
+          quizStore.isEndOfTurn && optionStatus === 'option--success',
+      }"
+      aria-label="Success icon"
+    >
+      <use :href="iconSuccessUrl" />
+    </svg>
+    <svg
+      class="icon"
+      :class="{
+        'icon--shown': quizStore.isEndOfTurn && optionStatus === 'option--fail',
+      }"
+      aria-label="Fail icon"
+    >
+      <use :href="iconFailUrl" />
+    </svg>
   </li>
 </template>
 
@@ -54,12 +77,12 @@ function handleSelection() {
     background-color var(--transition-config),
     border-color var(--transition-config);
   display: grid;
-  grid-template-areas: "padding-inline-start letter letter-margin label padding-inline-end";
-  grid-template-columns: 2rem 1ch 4.5rem 1fr 2rem;
+  grid-template-areas: "padding-inline-start letter letter-margin label icon-margin icon padding-inline-end";
+  grid-template-columns: 1.8rem 1ch 4.5rem 1fr 1.8rem 2rem 1.8rem;
   align-items: center;
 
   @include mixin.respond-short-screen {
-    grid-template-columns: 2rem 1ch 2.5rem 1fr 2rem;
+    grid-template-columns: 1.8rem 1ch 2.5rem 1fr 1.8rem 2rem 1.8rem;
   }
 
   &:not(.disabled) {
@@ -86,22 +109,39 @@ function handleSelection() {
   &::before {
     grid-area: letter;
   }
+}
 
-  & .label {
-    grid-area: label;
-    padding: 1.6rem 0;
+.label {
+  grid-area: label;
+  padding: 1.6rem 0;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+  cursor: pointer;
+
+  &[disabled] {
+    cursor: unset;
   }
+}
 
-  & .input {
-    width: 100%;
-    height: 100%;
-    grid-column: 1 / -1;
-    grid-row: 1 / span 1;
-    cursor: pointer;
+.icon {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-light);
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  transition: opacity var(--transition-config);
 
-    &[disabled] {
-      cursor: unset;
-    }
+  &--shown {
+    visibility: unset;
+    position: unset;
+    opacity: 1;
+    grid-area: icon;
   }
 }
 </style>

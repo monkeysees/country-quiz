@@ -31,6 +31,8 @@ onMounted(async () => {
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/styles/mixin";
+
 .game {
   --padding-inline: 3.2rem;
 
@@ -41,6 +43,10 @@ onMounted(async () => {
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @include mixin.respond-short-screen {
+    width: calc(48rem + var(--padding-inline) * 2);
+  }
 }
 
 .decoration {

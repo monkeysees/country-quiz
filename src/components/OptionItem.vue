@@ -87,7 +87,7 @@ function handleSelection() {
 
   &:not(.disabled) {
     &:hover,
-    &:focus {
+    &:focus-within {
       color: var(--color-light);
       border-color: var(--color-secondary);
       background-color: var(--color-secondary);

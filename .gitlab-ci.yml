@@ -1,7 +1,7 @@
 default:
   image: node:16.15
 
-deploy:
+pages:
   stage: deploy
   script:
     - npm ci

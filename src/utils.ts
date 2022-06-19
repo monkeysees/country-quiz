@@ -12,7 +12,7 @@ export function getRandomElements<T>(array: T[], count: number) {
 
   while (selectedElements.length < count) {
     const randomElIdx = generateRandomNumber(arrayCopy.length);
-    selectedElements.push(array[randomElIdx]);
+    selectedElements.push(arrayCopy[randomElIdx]);
     arrayCopy.splice(randomElIdx, 1);
   }
 

@@ -2,10 +2,15 @@ const htmlEl = document.documentElement;
 
 const largeScreenReferenceSizePx = 1440;
 const smallScreenReferenceSizePx = 375;
+const tinyScreenReferenceSizePx = 300;
 
 /* Accommodate font size on window resize */
 function getFontChangeRate(currentSize: number, baseSize: number) {
-  if (currentSize < smallScreenReferenceSizePx) {
+  if (currentSize <= tinyScreenReferenceSizePx) {
+    return currentSize <= baseSize ? 0.5 : 1;
+  }
+
+  if (currentSize <= smallScreenReferenceSizePx) {
     return currentSize <= baseSize ? 0.4 : 1;
   }
 

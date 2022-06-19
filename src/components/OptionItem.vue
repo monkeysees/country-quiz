@@ -24,7 +24,6 @@ const optionStatus = computed(() => {
 });
 
 function handleSelection() {
-  console.log("activated");
   quizStore.handleSelectedOption(props.option.id);
 }
 </script>

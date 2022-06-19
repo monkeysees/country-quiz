@@ -4,8 +4,8 @@ import { onMounted, ref } from "vue";
 import { useQuiz } from "@/quizStore";
 import QuestionDecoration from "@/assets/images/question.svg?component";
 import ResutsDecoration from "@/assets/images/results.svg?component";
-import QuizQuestion from "@/components/QuizQuestion.vue";
-import QuizResults from "@/components/QuizResults.vue";
+import QuestionPrompt from "@/components/QuestionPrompt.vue";
+import QuizScore from "@/components/QuizScore.vue";
 
 const quizStore = useQuiz();
 
@@ -32,12 +32,12 @@ onMounted(async () => {
       class="decoration decoration--question"
     />
     <ResutsDecoration v-if="showStats" class="decoration decoration--results" />
-    <QuizQuestion
+    <QuestionPrompt
       v-if="quizStore.isGameStarted && !showStats"
       class="question"
       @finish-quiz="handleQuizFinish"
     />
-    <QuizResults v-if="showStats" @restart-quiz="handleQuizRestart" />
+    <QuizScore v-if="showStats" @restart-quiz="handleQuizRestart" />
   </section>
 </template>
 

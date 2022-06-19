@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { useQuiz } from "@/quizStore";
-import OptionItem from "@/components/OptionItem.vue";
+import AnswerOptionItem from "@/components/AnswerOptionItem.vue";
 
 const quizStore = useQuiz();
 </script>
 
 <template>
   <ol v-if="quizStore.question" class="options-list">
-    <OptionItem
+    <AnswerOptionItem
       v-for="option in quizStore.question.options"
       :option="option"
       :key="option.id"

@@ -169,7 +169,7 @@ const generateAnswerOptions = {
     selectedCountries.map((country, idx) => ({
       id: `answer-option__${idx}`,
       value: country[prop],
-      correct: idx === correctValue,
+      correct: country[prop] === correctValue,
       selected: false,
     })),
 };

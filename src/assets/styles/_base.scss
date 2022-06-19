@@ -18,6 +18,11 @@
   --transition-config: 100ms ease-in-out;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   height: 100%;
   font-size: 62.5%;
@@ -28,6 +33,8 @@ body {
   font-family: var(--font-default);
   line-height: 1.5;
   background: center / cover no-repeat url("@/assets/images/background.png");
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 #app {

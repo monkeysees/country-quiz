@@ -56,7 +56,9 @@ The app is an infinite-length quiz with questions generated randomly from countr
 
 There are three types of question: for capitals, flags and populations.
 
-Quiz finishes after the first incorrect answer. It then shows you score for the game just ended, your maximum all-time score and restart button.
+While you are playing your current score, i.e. number of correct answers, is shown.
+
+Quiz finishes after the first incorrect answer. It then shows you the score for the game just ended, your maximum all-time score and a button to restart the quiz.
 
 Maximum score is persisted across site visits via localStorage.
 

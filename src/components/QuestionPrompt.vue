@@ -27,10 +27,11 @@ function handleButtonClick() {
 
 <template>
   <section class="question">
-    <fieldset v-if="quizStore.question">
+    <fieldset v-if="quizStore.question" class="prompt">
       <legend><QuestionTitle /></legend>
       <AnswerOptions />
     </fieldset>
+    <p class="score">Current score: {{ quizStore.stats.currentScore }}</p>
     <BaseButton
       class="button"
       :class="{ visible: quizStore.isEndOfTurn }"
@@ -47,18 +48,30 @@ function handleButtonClick() {
 
 .question {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   width: 40rem;
+  row-gap: 3.2rem;
 
   @include mixin.respond-small-height {
     width: 48rem;
   }
 }
 
+.prompt {
+  grid-column: 1 / -1;
+}
+
+.score {
+  align-self: center;
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 .button {
   justify-self: end;
   width: 11.6rem;
   height: 5.6rem;
-  margin-top: 2.4rem;
   font-weight: 700;
   font-size: 1.8rem;
   color: var(--color-light);
@@ -73,7 +86,6 @@ function handleButtonClick() {
     visibility: hidden;
     height: 0;
     padding: 0;
-    margin: 0 0 3.6rem;
   }
 
   &:focus-visible {

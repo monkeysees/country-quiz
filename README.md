@@ -31,7 +31,7 @@
 
 ## Overview
 
-This application is a simple country quiz. Please see [Features](##Features) section below for more details.
+This application is a simple country quiz. Please see [Features](#features) section below for more details.
 
 This was an interesting project to better learn Vue approach to frontend development
 as the whole app is composed out of simple in themselves components.

@@ -17,6 +17,7 @@ export const useQuiz = defineStore("quiz", {
       maxScore: 0,
     },
     gameStatus: <"off" | "going" | "success" | "fail">"off",
+    dataStatus: <"ok" | "loading" | "error">"ok",
   }),
   getters: {
     randomCountries: (state) => {
@@ -36,12 +37,15 @@ export const useQuiz = defineStore("quiz", {
   },
   actions: {
     fetchCountries() {
+      this.dataStatus = "loading";
       return axios
         .get<CountryRaw[]>("https://restcountries.com/v3.1/all")
         .then((res) => res.data)
         .then((countriesRaw) => {
           this.countries = extractCountriesFromRaw(countriesRaw);
-        });
+          this.dataStatus = "ok";
+        })
+        .catch(() => (this.dataStatus = "error"));
     },
     generateNewQuestion() {
       if (!this.countries.length) {

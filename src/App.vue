@@ -12,6 +12,15 @@ onMounted(() => quizStore.fetchCountries());
   <main class="app-main">
     <h1 class="app-heading">Country Quiz</h1>
     <QuizGame v-if="quizStore.countries.length" />
+    <p
+      v-else-if="quizStore.dataStatus === 'loading'"
+      class="app-status-message"
+    >
+      Loading…
+    </p>
+    <p v-else class="app-status-message">
+      Oops, something went wrong.<br />Please try again later.
+    </p>
   </main>
 </template>
 
@@ -28,5 +37,12 @@ onMounted(() => quizStore.fetchCountries());
   text-transform: uppercase;
   color: var(--color-light);
   margin-bottom: 1rem;
+}
+
+.app-status-message {
+  width: 40rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-light);
 }
 </style>

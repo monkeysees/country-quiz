@@ -1,59 +1,93 @@
-# country-quiz
+<h1 align="center">Country Quiz</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+<div align="center">
+   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+</div>
 
-## Recommended IDE Setup
+<div align="center">
+  <h3>
+    <a href="https://islambeg-frontend-projects.gitlab.io/frameworks-land/country-quiz/">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://gitlab.com/islambeg-frontend-projects/frameworks-land/country-quiz">
+      Solution
+    </a>
+    <span> | </span>
+    <a href="https://devchallenges.io/challenges/Bu3G2irnaXmfwQ8sZkw8">
+      Challenge
+    </a>
+  </h3>
+</div>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Table of Contents
 
-## Type Support for `.vue` Imports in TS
+- [Overview](#overview)
+  - [Built With](#built-with)
+- [Features](#features)
+- [How to use](#how-to-use)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Overview
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+This application is a simple country quiz. Please see [Features](##Features) section below for more details.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+This was an interesting project to better learn Vue approach to frontend development
+as the whole app is composed out of simple in themselves components.
 
-## Customize configuration
+I've also witnessed the benefits of using:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Typescript as it helped to catch errors during development
+- Pinia state manager as it helped to simplify components logic and keep most of mutations in one place
 
-## Project Setup
+### Built With
 
-```sh
-npm install
-```
+- [REST Countries API](https://restcountries.com/)
+- [Vue.js](https://vuejs.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
+- [Vite](vitejs.dev/)
 
-### Compile and Hot-Reload for Development
+## Features
 
-```sh
-npm run dev
-```
+The app is an infinite-length quiz with questions generated randomly from countries data provided by https://restcountries.com.
 
-### Type-Check, Compile and Minify for Production
+There are three types of question: for capitals, flags and populations.
 
-```sh
+Quiz finishes after the first incorrect answer. It then shows you score for the game just ended, your maximum all-time score and restart button.
+
+Maximum score is persisted across site visits via localStorage.
+
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://gitlab.com/islambeg-frontend-projects/frameworks-land/country-quiz
+
+# Install dependencies
+$ npm install
+
+# Run dev app
+$ npm run dev
+
+# Build production version
 npm run build
+
+# Preview production app (when already built)
+npm run preview
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Acknowledgements
 
-```sh
-npm run test:unit
-```
+- [Material Icons by Google](https://material.io/resources/icons/?style=round)
+- [A modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/)
+- [How to Favicon by Andrey Sitnik](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+## Contact
 
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Email islambeg@proton.me
+- Gitlab [@islambeg](https://gitlab.com/islambeg)

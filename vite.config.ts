@@ -1,8 +1,13 @@
 import { fileURLToPath, URL } from "url";
 
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import svgLoader from "vite-svg-loader";
+
+process.env = {
+  ...process.env,
+  ...loadEnv(process.env.NODE_ENV || "development", process.cwd(), ""),
+};
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -37,7 +42,8 @@ export default defineConfig({
     },
   },
   publicDir: "static",
-  base: "/frameworks-land/country-quiz/",
+  // if not self deploy then the path for gitlab pages is used
+  base: process.env.SELF_DEPLOY ? "/" : "/frameworks-land/country-quiz/",
   build: {
     outDir: "public",
   },

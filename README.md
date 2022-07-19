@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://islambeg-frontend-projects.gitlab.io/frameworks-land/country-quiz/">
+    <a href="https://country-quiz.islambeg.me/">
       Demo
     </a>
     <span> | </span>

@@ -88,6 +88,7 @@ npm run preview
 - [Material Icons by Google](https://material.io/resources/icons/?style=round)
 - [A modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/)
 - [How to Favicon by Andrey Sitnik](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)
+- [Masonry style layout with CSS Grid](https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb)
 
 ## Contact
 

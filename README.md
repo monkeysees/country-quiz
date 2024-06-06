@@ -6,17 +6,17 @@
 
 <div align="center">
   <h3>
-    <!-- <a href="https://country-quiz.islambeg.me/">
+    <a href="https://monkeysees.github.io/country-quiz/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://gitlab.com/islambeg-frontend-projects/frameworks-land/country-quiz">
+    <a href="https://github.com/monkeysees/country-quiz">
       Solution
     </a>
     <span> | </span>
     <a href="https://devchallenges.io/challenges/Bu3G2irnaXmfwQ8sZkw8">
       Challenge
-    </a> -->
+    </a>
   </h3>
 </div>
 
@@ -68,7 +68,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://gitlab.com/islambeg-frontend-projects/frameworks-land/country-quiz
+$ git clone https://github.com/monkeysees/country-quiz.git
 
 # Install dependencies
 $ npm install

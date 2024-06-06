@@ -42,9 +42,5 @@ export default defineConfig({
     },
   },
   publicDir: "static",
-  // if not self deploy then the path for gitlab pages is used
-  base: process.env.SELF_DEPLOY ? "/" : "/frameworks-land/country-quiz/",
-  build: {
-    outDir: "public",
-  },
+  base: "./"
 });

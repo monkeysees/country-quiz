@@ -1,7 +1,7 @@
 {
   "name": "country-quiz",
   "version": "0.0.0",
-  "author": "islambeg",
+  "author": "monkeysees",
   "license": "Unlicense",
   "scripts": {
     "dev": "vite",
